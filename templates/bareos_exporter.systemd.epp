@@ -1,0 +1,16 @@
+[Unit]
+Description=Prometheus Bareos Exporter
+Wants=basic.target
+After=basic.target network.target
+
+[Service]
+User=<%= $::bareos_exporter::bareos_exporter_user %>
+Group=<%= $::bareos_exporter::bareos_exporter_group %>
+ExecStart=<%= $bin_dir -%>/bareos_exporter -dsn <%= $::bareos_exporter::bareos_exporter_datasource %> -dbtype <%= $::bareos_exporter::bareos_exporter_dbtype %> -port <%= $::bareos_exporter::bareos_exporter_port %>
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+Restart=always
+RestartSec=60s
+
+[Install]
+WantedBy=multi-user.target
