@@ -9,21 +9,25 @@ class bareos_exporter::install {
   # this is a private class
   assert_private("You're not supposed to do that!")
 
-  include ::archive
+  include archive
 
   if $bareos_exporter::manage_user {
-    ensure_resource('user', [$::bareos_exporter::bareos_exporter_user], {
-      ensure => 'present',
-      system => true,
-    })
+    ensure_resource('user', [$bareos_exporter::bareos_exporter_user],
+      {
+        ensure => 'present',
+        system => true,
+      }
+    )
   }
 
   if $bareos_exporter::manage_group {
-    ensure_resource('group', [$::bareos_exporter::bareos_exporter_group], {
-      ensure => 'present',
-      system => true,
-    })
-    Group[$::bareos_exporter::bareos_exporter_group]->User[$::bareos_exporter::bareos_exporter_user]
+    ensure_resource('group', [$bareos_exporter::bareos_exporter_group],
+      {
+        ensure => 'present',
+        system => true,
+      }
+    )
+    Group[$bareos_exporter::bareos_exporter_group] ->User[$bareos_exporter::bareos_exporter_user]
   }
 
   $real_archive_url = pick(
@@ -48,5 +52,4 @@ class bareos_exporter::install {
     creates         => "${install_dir}/bareos_exporter",
     cleanup         => true,
   }
-
 }

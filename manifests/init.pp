@@ -22,15 +22,15 @@
 # @param port
 #   he port on which the service is expose
 class bareos_exporter (
-  Optional[String] $version = $::bareos_exporter::params::version,
-  Optional[Boolean] $manage_user = $::bareos_exporter::params::manage_user,
-  Optional[Boolean] $manage_group = $::bareos_exporter::params::manage_group,
-  Optional[String] $bareos_exporter_user = $::bareos_exporter::params::bareos_exporter_user,
-  Optional[String] $bareos_exporter_group = $::bareos_exporter::params::bareos_exporter_group,
-  Optional[String] $datasource = $::bareos_exporter::params::bareos_exporter_datasource,
-  Optional[String] $dbtype = $::bareos_exporter::params::bareos_exporter_dbtype,
-  Optional[String] $port = $::bareos_exporter::params::bareos_exporter_port,
+  Optional[String] $version = $bareos_exporter::params::version,
+  Optional[Boolean] $manage_user = $bareos_exporter::params::manage_user,
+  Optional[Boolean] $manage_group = $bareos_exporter::params::manage_group,
+  Optional[String] $bareos_exporter_user = $bareos_exporter::params::bareos_exporter_user,
+  Optional[String] $bareos_exporter_group = $bareos_exporter::params::bareos_exporter_group,
+  Optional[String] $datasource = $bareos_exporter::params::bareos_exporter_datasource,
+  Optional[String] $dbtype = $bareos_exporter::params::bareos_exporter_dbtype,
+  Optional[String] $port = $bareos_exporter::params::bareos_exporter_port,
 ) inherits bareos_exporter::params {
-  class { '::bareos_exporter::install': }
-  ~> class {'::bareos_exporter::service': }
+  class { 'bareos_exporter::install': }
+  ~> class { 'bareos_exporter::service': }
 }
