@@ -11,7 +11,7 @@ end
 group :test do
   # Require the latest Puppet by default unless a specific version was requested
   # CI will typically set it to '~> 7.0' to get 7.x
-  gem 'puppet', ENV['PUPPET_GEM_VERSION'] || '>= 0', require: false
+  #gem 'puppet', ENV['PUPPET_GEM_VERSION'] || '>= 0', require: false
   # Needed to build the test matrix based on metadata
   gem 'puppet_metadata', '~> 1.10',  require: false
   # Needed for the rake tasks
