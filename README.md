@@ -56,7 +56,7 @@ class { '::bareos_exporter':
   manage_group          => true,
   bareos_exporter_user  => 'bareos',
   bareos_exporter_group => 'bareos',
-  dsn                   => 'user=bareos host=/var/run/postgresql/ sslmode=disable',
+  datasource            => 'user=bareos host=/var/run/postgresql/ sslmode=disable',
   dbtype                => 'pgx',
 }
 ```
