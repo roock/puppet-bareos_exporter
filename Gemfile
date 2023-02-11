@@ -15,10 +15,10 @@ group :test do
   # Needed to build the test matrix based on metadata
   gem 'puppet_metadata', '~> 1.10',  require: false
   # Needed for the rake tasks
-  gem 'puppetlabs_spec_helper', '>= 2.16.0', '< 5', require: false
+  #gem 'puppetlabs_spec_helper', '>= 2.16.0', '< 5', require: false
   # Rubocop versions are also specific so it's recommended
   # to be precise. Can be turned off via a parameter
-  gem 'rubocop', require: false
+  # gem 'rubocop', require: false
 
   gem 'voxpupuli-test', '~> 5.4',   :require => false
   gem 'coveralls',                  :require => false

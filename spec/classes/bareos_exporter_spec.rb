@@ -15,11 +15,10 @@ describe 'bareos_exporter' do
         it { is_expected.to contain_class('bareos_exporter::service') }
 
         it do
-          is_expected.to contain_archive('/tmp/bareos_exporter-1.0.2.linux-amd64.tar.gz')
-            .with(
-              'source'  => 'https://github.com/b1-systems/bareos_exporter/releases/download/v1.0.2/bareos_exporter-v1.0.2-linux-amd64.tar.gz',
-              'creates' => '/opt/bareos_exporter-1.0.2/bareos_exporter',
-            )
+          is_expected.to contain_archive('/tmp/bareos_exporter-1.0.2.linux-amd64.tar.gz').with(
+            'source'  => 'https://github.com/b1-systems/bareos_exporter/releases/download/v1.0.2/bareos_exporter-v1.0.2-linux-amd64.tar.gz',
+            'creates' => '/opt/bareos_exporter-1.0.2/bareos_exporter'
+          )
         end
 
         it { is_expected.to contain_service('bareos_exporter') }

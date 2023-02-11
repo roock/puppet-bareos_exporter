@@ -4,7 +4,6 @@ RSpec.configure do |c|
   c.mock_with :rspec
 end
 
-
 # puppetlabs_spec_helper will set up coverage if the env variable is set.
 # We want to do this if lib exists and it hasn't been explicitly set.
 ENV['COVERAGE'] ||= 'yes' if Dir.exist?(File.expand_path('../lib', __dir__))
@@ -27,7 +26,7 @@ require 'rspec-puppet-facts'
 
 require 'spec_helper_local' if File.file?(File.join(File.dirname(__FILE__), 'spec_helper_local.rb'))
 
-include RspecPuppetFacts
+require RspecPuppetFacts
 
 default_facts = {
   puppetversion: Puppet.version,
@@ -44,7 +43,7 @@ default_fact_files.each do |f|
 
   begin
     default_facts.merge!(YAML.safe_load(File.read(f), [], [], true))
-  rescue => e
+  rescue StandardError => e
     RSpec.configuration.reporter.message "WARNING: Unable to load #{f}: #{e}"
   end
 end
@@ -63,8 +62,8 @@ RSpec.configure do |c|
     Puppet.settings[:strict_variables] = true
   end
   c.filter_run_excluding(bolt: true) unless ENV['GEM_BOLT']
-  c.after(:suite) do
-  end
+  # c.after(:suite) do
+  # end
 
   # Filter backtrace noise
   backtrace_exclusion_patterns = [
