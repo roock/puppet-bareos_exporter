@@ -23,6 +23,7 @@ group :test do
   gem 'voxpupuli-test', '~> 5.4',   :require => false
   gem 'coveralls',                  :require => false
   gem 'simplecov-console',          :require => false
+  gem 'puppet-strings', '>= 2.2',   :require => false
 end
 
 # The system_tests group is used in gha-puppet's beaker workflow.
