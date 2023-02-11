@@ -1,11 +1,10 @@
 require 'spec_helper_acceptance'
 
-describe 'gitlab class' do
+describe 'bareos_exporter class' do
   context 'default parameters' do
     it 'idempotently with no errors' do
       pp = <<-EOS
-      class { 'gitlab':
-        external_url => "http://${::fqdn}",
+      class { 'bareos_exporter':
       }
       EOS
 
@@ -18,15 +17,6 @@ describe 'gitlab class' do
       apply_manifest(pp, catch_changes: true)
 
       shell('sleep 15') # give it some time to start up
-    end
-
-    describe package('gitlab-ce') do
-      it { is_expected.to be_installed }
-    end
-
-    describe file('/etc/gitlab/initial_root_password') do
-      it { is_expected.to be_file }
-      its(:content) { is_expected.to match %r{^Password: ...................} }
     end
 
     describe command('curl -s -S http://127.0.0.1:80/users/sign_in') do

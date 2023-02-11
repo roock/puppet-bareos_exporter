@@ -11,5 +11,5 @@ jobs:
     name: Puppet
     uses: voxpupuli/gha-puppet/.github/workflows/basic.yml@v1
     with:
-      rubocop: false
-
+      rubocop: true
+      pidfile_workaround: 'false'
