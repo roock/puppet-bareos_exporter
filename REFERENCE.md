@@ -34,76 +34,76 @@ include bareos_exporter
 
 The following parameters are available in the `bareos_exporter` class:
 
-* [`version`](#version)
-* [`manage_user`](#manage_user)
-* [`manage_group`](#manage_group)
-* [`bareos_exporter_user`](#bareos_exporter_user)
-* [`bareos_exporter_group`](#bareos_exporter_group)
-* [`datasource`](#datasource)
-* [`dbtype`](#dbtype)
-* [`port`](#port)
+* [`version`](#-bareos_exporter--version)
+* [`manage_user`](#-bareos_exporter--manage_user)
+* [`manage_group`](#-bareos_exporter--manage_group)
+* [`bareos_exporter_user`](#-bareos_exporter--bareos_exporter_user)
+* [`bareos_exporter_group`](#-bareos_exporter--bareos_exporter_group)
+* [`datasource`](#-bareos_exporter--datasource)
+* [`dbtype`](#-bareos_exporter--dbtype)
+* [`port`](#-bareos_exporter--port)
 
-##### <a name="version"></a>`version`
+##### <a name="-bareos_exporter--version"></a>`version`
 
 Data type: `Optional[String]`
 
 Which version to install
 
-Default value: `$::bareos_exporter::params::version`
+Default value: `$bareos_exporter::params::version`
 
-##### <a name="manage_user"></a>`manage_user`
+##### <a name="-bareos_exporter--manage_user"></a>`manage_user`
 
 Data type: `Optional[Boolean]`
 
 Whether to create the bareos_exporter user. Must be created by other means if set to false
 
-Default value: `$::bareos_exporter::params::manage_user`
+Default value: `$bareos_exporter::params::manage_user`
 
-##### <a name="manage_group"></a>`manage_group`
+##### <a name="-bareos_exporter--manage_group"></a>`manage_group`
 
 Data type: `Optional[Boolean]`
 
 Whether to create the bareos_exporter group. Must be created by other means if set to false
 
-Default value: `$::bareos_exporter::params::manage_group`
+Default value: `$bareos_exporter::params::manage_group`
 
-##### <a name="bareos_exporter_user"></a>`bareos_exporter_user`
+##### <a name="-bareos_exporter--bareos_exporter_user"></a>`bareos_exporter_user`
 
 Data type: `Optional[String]`
 
 whether to create the user. Default is postgres
 
-Default value: `$::bareos_exporter::params::bareos_exporter_user`
+Default value: `$bareos_exporter::params::bareos_exporter_user`
 
-##### <a name="bareos_exporter_group"></a>`bareos_exporter_group`
+##### <a name="-bareos_exporter--bareos_exporter_group"></a>`bareos_exporter_group`
 
 Data type: `Optional[String]`
 
 whether to create the group. Default is postgres
 
-Default value: `$::bareos_exporter::params::bareos_exporter_group`
+Default value: `$bareos_exporter::params::bareos_exporter_group`
 
-##### <a name="datasource"></a>`datasource`
+##### <a name="-bareos_exporter--datasource"></a>`datasource`
 
 Data type: `Optional[String]`
 
 the url connection to postgres. Default is local "user=postgres host=/var/run/postgresql/ sslmode=disable"
 
-Default value: `$::bareos_exporter::params::bareos_exporter_datasource`
+Default value: `$bareos_exporter::params::bareos_exporter_datasource`
 
-##### <a name="dbtype"></a>`dbtype`
+##### <a name="-bareos_exporter--dbtype"></a>`dbtype`
 
 Data type: `Optional[String]`
 
 the type of database connection to use # FIXME provide example
 
-Default value: `$::bareos_exporter::params::bareos_exporter_dbtype`
+Default value: `$bareos_exporter::params::bareos_exporter_dbtype`
 
-##### <a name="port"></a>`port`
+##### <a name="-bareos_exporter--port"></a>`port`
 
 Data type: `Optional[String]`
 
 he port on which the service is expose
 
-Default value: `$::bareos_exporter::params::bareos_exporter_port`
+Default value: `$bareos_exporter::params::bareos_exporter_port`
 
