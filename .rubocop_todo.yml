@@ -1,3 +1,7 @@
 RSpec/HookArgument:
   Exclude:
     - 'spec/spec_helper.rb'
+
+Style/MixinUsage:
+  Exclude:
+    - 'spec/spec_helper.rb'
