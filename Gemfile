@@ -34,6 +34,10 @@ group :system_tests do
   gem 'beaker-rspec', require: false
 end
 
+group :acceptance do
+  gem 'beaker-rspec'
+end
+
 # The release group is used in gha-puppet's release workflow
 group :release do
   gem 'github_changelog_generator', '>= 1.16.1',  :require => false if RUBY_VERSION >= '2.5'
