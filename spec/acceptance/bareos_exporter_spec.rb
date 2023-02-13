@@ -27,15 +27,15 @@ describe 'bareos_exporter class' do
         address     => '127.0.0.1/16',
         auth_method => 'md5',
       }
-    
+
       class { '::bareos':
         repo_release => '20', # Highly recommend to fix your bareos release. Defaults to 'latest'
         manage_repo  => true, # use the internally shipped repo management
       }
-    
+
       # Install and configure an Director Server
       $storage_password = 'Password of the storage instance'
-    
+
       class { '::bareos::profile::director':
         password         => 'Password of the director instance itself',
         catalog_conf     => {
@@ -49,26 +49,26 @@ describe 'bareos_exporter class' do
         storage_address  => 'localhost',
         storage_password => $storage_password,
       }
-    
+
       # add storage server to the same machine
       #class { '::bareos::profile::storage':
       #  password       => $storage_password,
       #  archive_device => '/var/lib/bareos/storage',
       #}
-    
+
       # add the client to the config
       #::bareos::director::client { 'bareos-client':
       #  description => 'Your fancy client to backup',
       #  password    => 'MyClientPasswordPleaseChange',
       #  address     => 'fqdn',
       #}
-    
+
       # Create an backup job by referencing to the jobDef template.
       #::bareos::director::job { 'backup-bareos-client':
       #  job_defs => 'LinuxAll',
       #  client   => 'bareos-client', # which client to assign this job
       #}
-    
+
       class { '::bareos_exporter':
         manage_user           => false,
         manage_group          => false,
