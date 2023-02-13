@@ -84,22 +84,21 @@ configure_beaker(modules: :fixtures) do |host|
     #package { ['curl']:
     #  ensure => present,
     #}
-  
-  
+
   )
 
   apply_manifest_on(host, pp, catch_failures: false)
 
   apply_manifest_on(host, pp, catch_failures: true)
- 
+
   # https://gitlab.com/gitlab-org/omnibus-gitlab/issues/2229
   # There is no /usr/share/zoneinfo in latest Docker image for ubuntu 16.04
   # Gitlab installer fail without this file
-  #tzdata = %(
+  # tzdata = %(
   #  package { ['tzdata']:
   #    ensure => present,
   #  }
-  #)
+  # )
 
   # apply_manifest_on(host, tzdata, catch_failures: true) if fact('os.release.major') =~ %r{(16.04|18.04)}
 end
