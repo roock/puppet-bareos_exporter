@@ -14,8 +14,8 @@ fixtures:
       repo: 'https://github.com/puppetlabs/puppetlabs-puppet_agent.git'
       ref: '4.9.0'
     provision: 'https://github.com/puppetlabs/provision.git'
-    bareos':
-      repo:  'https://github.com/voxpupuli/puppet-bareos.git'
+    bareos:
+      repo: 'https://github.com/voxpupuli/puppet-bareos.git'
       ref: 'master'
   forge_modules:
     concat:
