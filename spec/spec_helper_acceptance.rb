@@ -2,9 +2,10 @@
 
 require 'voxpupuli/acceptance/spec_helper_acceptance'
 
-configure_beaker(modules: :fixtures) do |host|
-  install_module_from_forge_on(host, 'puppetlabs/apt', '9.0.1')
-  install_module_from_forge_on(host, 'puppetlabs/postgresql', '7.5.0') # >= 2.1.0 < 8.0.0'
+configure_beaker do |host|
+  # Install testing only dependencies, not specified in metadata
+  install_module_from_forge('puppetlabs/apt', '>= 9.0.0')
+  install_module_from_forge('puppetlabs/postgresql', '>= 8.0.0')
 
   pp = %(
     class { 'postgresql::globals':
@@ -105,3 +106,5 @@ configure_beaker(modules: :fixtures) do |host|
 
   # apply_manifest_on(host, tzdata, catch_failures: true) if fact('os.release.major') =~ %r{(16.04|18.04)}
 end
+
+require 'beaker/module_install_helper'
