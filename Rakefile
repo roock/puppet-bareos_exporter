@@ -16,7 +16,7 @@ begin
 rescue LoadError
 end
 
-task :beaker => "spec_prep"
+#task :beaker => "spec_prep"
 
 # load optional tasks for releases
 # only available if gem group releases is installed
