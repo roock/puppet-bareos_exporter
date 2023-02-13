@@ -1,10 +1,19 @@
 HOSTS:
-  ubuntu-1404-x64:
+  ubuntu-2004-x64:
     roles:
       - agent
       - default
-    platform: ubuntu-14.04-amd64
-    hypervisor: vagrant
-    box: puppetlabs/ubuntu-14.04-64-nocm
+    platform: ubuntu-20.04-amd64
+    hypervisor: docker
+    image: ubuntu:20.04
+    docker_cmd: '["/sbin/init"]'
+    # Run arbitrary things
+    #docker_image_commands:
+    #  - 'touch /tmp/myfile'
+    dockeropts:
+    #  Labels:
+    #    thing: 'stuff'
+      HostConfig:
+        Privileged: true
 CONFIG:
   type: foss
