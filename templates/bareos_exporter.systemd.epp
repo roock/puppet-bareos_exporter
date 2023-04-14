@@ -6,7 +6,7 @@ After=basic.target network.target
 [Service]
 User=<%= $::bareos_exporter::bareos_exporter_user %>
 Group=<%= $::bareos_exporter::bareos_exporter_group %>
-ExecStart=<%= $bin_dir -%>/bareos_exporter -dsn <%= $::bareos_exporter::bareos_exporter_datasource %> -dbtype <%= $::bareos_exporter::bareos_exporter_dbtype %> -port <%= $::bareos_exporter::bareos_exporter_port %>
+ExecStart=<%= $bin_dir -%>/bareos_exporter -dsn <%= $::bareos_exporter::datasource %> -dbtype <%= $::bareos_exporter::dbtype %> -port <%= $::bareos_exporter::port %>
 ExecReload=/bin/kill -HUP $MAINPID
 KillMode=process
 Restart=always
