@@ -16,6 +16,8 @@ plugins:
           release: patch
         - scope: no-release
           release: false
+  - - "@semantic-release/exec"
+    - prepareCmd: "./bump-metadata-version.sh ${nextRelease.version}"
   - - "@semantic-release/release-notes-generator"
   - - "@semantic-release/changelog"
     - changelogFile: CHANGELOG.md
@@ -24,6 +26,7 @@ plugins:
     - message: "chore: Release ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
       assets:
         - CHANGELOG.md
+        - metadata.json
   - - "@semantic-release/github"
     - assets:
         - CHANGELOG.md
