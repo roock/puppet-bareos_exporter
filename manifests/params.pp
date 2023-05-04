@@ -15,17 +15,16 @@ class bareos_exporter::params {
   $bareos_exporter_dbtype        = 'pgx'
   $bareos_exporter_port          = '9625'
 
-
-  case $::architecture {
+  case $facts['os']['architecture'] {
     'x86_64', 'amd64': { $arch = 'amd64' }
     default: {
-      fail("${::architecture} unsuported")
+      fail("${facts['os']['architecture']} unsuported")
     }
   }
-  case $::kernel {
-    'Linux': { $os = downcase($::kernel)}
+  case $facts['kernel'] {
+    'Linux': { $os = downcase($facts['kernel']) }
     default: {
-      fail("${::kernel} not supported")
+      fail("${facts['kernel']} not supported")
     }
   }
 }
