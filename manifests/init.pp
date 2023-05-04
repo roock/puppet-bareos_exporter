@@ -22,7 +22,7 @@
 # @param dbtype
 #   the type of database connection to use # FIXME provide example
 # @param port
-#   he port on which the service is expose
+#   the port on which the service is expose
 class bareos_exporter (
   Optional[String] $version = $bareos_exporter::params::version,
   Optional[String] $archive_url = $bareos_exporter::params::archive_url,
