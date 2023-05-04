@@ -4,7 +4,7 @@
 fixtures:
   repositories:
     archive:
-      repo: "git://github.com/voxpupuli/puppet-archive"
+      repo: "https://github.com/voxpupuli/puppet-archive"
       ref: "v6.0.2"
     stdlib: 
       repo: "https://github.com/puppetlabs/puppetlabs-stdlib"
@@ -14,7 +14,16 @@ fixtures:
       repo: 'https://github.com/puppetlabs/puppetlabs-puppet_agent.git'
       ref: '4.9.0'
     provision: 'https://github.com/puppetlabs/provision.git'
+    bareos:
+      repo: 'https://github.com/voxpupuli/puppet-bareos.git'
+      ref: 'master'
   forge_modules:
     concat:
       repo: "puppetlabs-concat"
       ref: "7.1.1"
+    postgresql:
+      repo: "puppetlabs/postgresql"
+      ref: '7.5.0'
+    apt:
+      repo: "puppetlabs/apt"
+      ref: '9.0.1'
