@@ -1,3 +1,17 @@
+## [1.1.0](https://github.com/roock/puppet-bareos_exporter/compare/v1.0.0...v1.1.0) (2023-05-04)
+
+
+### Features
+
+* **ci:** automatically bump version in metadata.json ([a6d0df0](https://github.com/roock/puppet-bareos_exporter/commit/a6d0df0e616c0534fecab50b04917a1bc546d28e))
+* **ci:** run publish puppet module on release creation ([36a21fb](https://github.com/roock/puppet-bareos_exporter/commit/36a21fb852cb4377c6e2223b6cfc550da3d100b2))
+
+
+### Bug Fixes
+
+* **ci:** debug bump-metadata-version.sh ([d237078](https://github.com/roock/puppet-bareos_exporter/commit/d2370783287f93ffda9078f97fdddd6ac661c41d))
+* **ci:** fix usage between GNU sed and BSD sed ([1abab02](https://github.com/roock/puppet-bareos_exporter/commit/1abab028a4d9688a3875fc0fce5e769d8f6ba282))
+
 ## 1.0.0 (2023-05-04)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "roock-bareos_exporter",
-  "version": "0.0.1",
+  "version": "1.1.0",
   "author": "Roman Pertl",
   "summary": "Install Bareos Prometheus Exporter",
   "license": "Apache-2.0",
