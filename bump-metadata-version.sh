@@ -1,8 +1,4 @@
 #!/usr/bin/env bash
 
-bash --version
-
-set -x
-
-sed -i '' -E "s/\"version\": \".*\"/\"version\": \"$1\"/" metadata.json
+sed "s/\"version\": \".*\"/\"version\": \"$1\"/" -i'' metadata.json
 
