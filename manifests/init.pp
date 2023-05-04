@@ -7,6 +7,8 @@
 #
 # @param version
 #   Which version to install
+# @aram archive_url
+#   Specify a full url for downloading of specifying a version
 # @param manage_user
 #   Whether to create the bareos_exporter user. Must be created by other means if set to false
 # @param manage_group
@@ -20,9 +22,10 @@
 # @param dbtype
 #   the type of database connection to use # FIXME provide example
 # @param port
-#   he port on which the service is expose
+#   the port on which the service is expose
 class bareos_exporter (
   Optional[String] $version = $bareos_exporter::params::version,
+  Optional[String] $archive_url = $bareos_exporter::params::archive_url,
   Optional[Boolean] $manage_user = $bareos_exporter::params::manage_user,
   Optional[Boolean] $manage_group = $bareos_exporter::params::manage_group,
   Optional[String] $bareos_exporter_user = $bareos_exporter::params::bareos_exporter_user,

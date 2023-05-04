@@ -42,6 +42,7 @@ The following parameters are available in the `bareos_exporter` class:
 * [`datasource`](#datasource)
 * [`dbtype`](#dbtype)
 * [`port`](#port)
+* [`archive_url`](#archive_url)
 
 ##### <a name="version"></a>`version`
 
@@ -49,7 +50,7 @@ Data type: `Optional[String]`
 
 Which version to install
 
-Default value: `$::bareos_exporter::params::version`
+Default value: `$bareos_exporter::params::version`
 
 ##### <a name="manage_user"></a>`manage_user`
 
@@ -57,7 +58,7 @@ Data type: `Optional[Boolean]`
 
 Whether to create the bareos_exporter user. Must be created by other means if set to false
 
-Default value: `$::bareos_exporter::params::manage_user`
+Default value: `$bareos_exporter::params::manage_user`
 
 ##### <a name="manage_group"></a>`manage_group`
 
@@ -65,7 +66,7 @@ Data type: `Optional[Boolean]`
 
 Whether to create the bareos_exporter group. Must be created by other means if set to false
 
-Default value: `$::bareos_exporter::params::manage_group`
+Default value: `$bareos_exporter::params::manage_group`
 
 ##### <a name="bareos_exporter_user"></a>`bareos_exporter_user`
 
@@ -73,7 +74,7 @@ Data type: `Optional[String]`
 
 whether to create the user. Default is postgres
 
-Default value: `$::bareos_exporter::params::bareos_exporter_user`
+Default value: `$bareos_exporter::params::bareos_exporter_user`
 
 ##### <a name="bareos_exporter_group"></a>`bareos_exporter_group`
 
@@ -81,7 +82,7 @@ Data type: `Optional[String]`
 
 whether to create the group. Default is postgres
 
-Default value: `$::bareos_exporter::params::bareos_exporter_group`
+Default value: `$bareos_exporter::params::bareos_exporter_group`
 
 ##### <a name="datasource"></a>`datasource`
 
@@ -89,7 +90,7 @@ Data type: `Optional[String]`
 
 the url connection to postgres. Default is local "user=postgres host=/var/run/postgresql/ sslmode=disable"
 
-Default value: `$::bareos_exporter::params::bareos_exporter_datasource`
+Default value: `$bareos_exporter::params::bareos_exporter_datasource`
 
 ##### <a name="dbtype"></a>`dbtype`
 
@@ -97,13 +98,21 @@ Data type: `Optional[String]`
 
 the type of database connection to use # FIXME provide example
 
-Default value: `$::bareos_exporter::params::bareos_exporter_dbtype`
+Default value: `$bareos_exporter::params::bareos_exporter_dbtype`
 
 ##### <a name="port"></a>`port`
 
 Data type: `Optional[String]`
 
-he port on which the service is expose
+the port on which the service is expose
 
-Default value: `$::bareos_exporter::params::bareos_exporter_port`
+Default value: `$bareos_exporter::params::bareos_exporter_port`
+
+##### <a name="archive_url"></a>`archive_url`
+
+Data type: `Optional[String]`
+
+
+
+Default value: `$bareos_exporter::params::archive_url`
 
