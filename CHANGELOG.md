@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/roock/puppet-bareos_exporter/compare/v1.1.0...v1.1.1) (2023-05-04)
+
+
+### Bug Fixes
+
+* **ci:** use Github PAT instead of GITHUB_TOKEN ([91626aa](https://github.com/roock/puppet-bareos_exporter/commit/91626aa6521b7cdb782a18e125d29f40031c7757))
+
 ## [1.1.0](https://github.com/roock/puppet-bareos_exporter/compare/v1.0.0...v1.1.0) (2023-05-04)
 
 
